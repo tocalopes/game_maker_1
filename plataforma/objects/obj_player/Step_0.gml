@@ -1,5 +1,5 @@
-key_left = keyboard_check(vk_left); //check de virtual keyboard lef
-key_right = keyboard_check(vk_right) //constant
+key_left = keyboard_check(vk_left) || keyboard_check(ord("A")); //check de virtual keyboard lef
+key_right = keyboard_check(vk_right) || keyboard_check(ord("D"));//constant
 key_jump = keyboard_check_pressed(vk_space);
 
 var move = key_right - key_left;//last only 1 step = 1 frame
@@ -30,3 +30,35 @@ if(place_meeting(x ,y + vsp, obj_wall)){
 }
 
 y = y + vsp;
+
+
+//Animation
+if (!place_meeting(x, y + 1, obj_wall)){
+	sprite_index = spr_player_up;
+	image_speed = 0; //multipayer that effects the speed o spray
+	if(sign(vsp) > 0) image_index = 1; else image_index = 0;
+} else {
+	image_speed = 1;
+	if (hsp == 0){
+		sprite_index = spr_player;
+	} else {
+		sprite_index = spr_player_run;
+	}
+}
+
+if(sign(hsp) != 0) image_xscale = sign(hsp);
+ //xcalin on the x aciss
+
+
+
+
+
+
+
+
+
+
+
+
+
+
