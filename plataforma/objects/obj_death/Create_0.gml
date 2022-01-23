@@ -1,5 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
-firing_delay = 0;
-recoil = 0;
-controller_angle = 0;
+hsp = 0;
+vsp = 0;
+grv = 0.3;
+done = 0;
+
+image_speed = 0;
